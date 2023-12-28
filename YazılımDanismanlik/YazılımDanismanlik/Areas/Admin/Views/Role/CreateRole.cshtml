@@ -1,0 +1,22 @@
+﻿@model YazilimDanismanlik.Models.RoleViewModel
+
+@{
+    ViewData["Title"] = "CreateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <br />
+    <label> Yeni Hizmet  tanımla </label>
+    <input type="text" placeholder="Rol Adı" asp-for="RolAdi" class="form-control" />
+    <br />
+    <input type="text" placeholder="Rol Açıklaması Alanı" asp-for="RolTanimi" class="form-control">
+    <br />
+  
+    <button class="btn btn-primary"> Yeni Rol Tanımla </button>
+</form>
+
+
+
+
+

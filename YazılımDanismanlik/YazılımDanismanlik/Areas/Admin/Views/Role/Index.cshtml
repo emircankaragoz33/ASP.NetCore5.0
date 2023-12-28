@@ -1,0 +1,63 @@
+﻿@model List<WebRole>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 style="text-align:center" class="mb-0">Yetkiler ve yetkileri düzenleme işlemleri</h3>
+</div>
+
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Yetki Adı</th>
+                <th scope="col">Yetki açıklaması</th>
+                <th scope="col" class="sort" data-sort="completion">Oluşturlduğu Tarih</th>
+                <th scope="col">Yetkiyi kaldır.</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.Id
+                    </th>
+                    <th class="budget">
+                        @item.Name
+                    </th>
+
+                    <th class="budget">
+                        @item.RolTanimi
+                    </th>
+
+                    <th class="budget">
+                        @item.RolOlusturmaTarihi
+                    </th>
+
+
+                    <td> <a href="/Admin/Role/DeleteRole/@item.Id" class="btn btn-danger"> Yetkiyi kaldır. </a></td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+
+    <br />
+
+
+    <a style="margin-left:20px" href="/Admin/Role/CreateRole/" class="btn btn-primary"> Yeni Yetki ekle! </a>
+
+</div>
+
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@using EntityLayer.Concrete;
+@model List<EgitmenContact>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/EgitmenPanel/Views/Shared/_egitmenLayout.cshtml";
+}
+<link rel="stylesheet" href="~/admin/dist/styles.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" />
+
+<section class="page-section">
+    <div class="container px-4 px-lg-5">
+        <br />
+        <br />
+        <h1> @ViewBag.Ad için gelen eğitim talepleri </h1>
+       <br /> 
+       <br />
+        <hr class="divider" />
+
+        <div class="row gx-4 gx-lg-5">
+            @foreach (var item in Model)
+            {
+
+
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="mt-5">           
+                        <h3 class="h4 mb-2">@item.GonderenUye</h3>
+                        <p class="text-muted mb-0"> @item.Message</p>
+                        <p class="text-muted mb-0"> @item.Tarih</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

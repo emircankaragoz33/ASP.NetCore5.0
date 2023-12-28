@@ -1,0 +1,31 @@
+﻿@using EntityLayer.Concrete
+@model About
+
+@{
+    ViewData["Title"] = "AboutGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="/css/Form.css" rel="stylesheet">
+
+<br />
+
+
+
+<form method="post" class="demo-form1">
+
+    @Html.HiddenFor(x=>x.AboutId)
+     <div class="input-wrap">
+        <label class="f-title" >Hakkımızda Başlık</label>
+        <input type="text" asp-for="AboutBaslik" class="input" placeholder="Başlık">
+    </div>
+
+    <div class="input-wrap">
+        <label class="f-title">Hakkımızda Açıklama</label>
+        <input type="text" asp-for="AboutAciklama" class="input" placeholder="Açıklama">
+    </div>
+
+    <button type="submit"> Kaydet ve güncelle </button>
+
+</form>
+

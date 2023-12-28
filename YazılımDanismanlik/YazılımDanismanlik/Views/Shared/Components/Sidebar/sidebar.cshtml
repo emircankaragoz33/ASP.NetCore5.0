@@ -1,0 +1,48 @@
+﻿
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
+
+   
+    </div>
+    <ul class="nav">
+        <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+                <div class="nav-profile-image">
+                    <img src="/memberImage/@ViewBag.Fotograf" alt="profile" />
+                    <span class="login-status online"></span>
+                    <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column pr-3">
+                    <span class="font-weight-medium mb-2">@ViewBag.AdSoyad</span>
+                    <span class="font-weight-normal">@ViewBag.Yetki</span>
+                </div>
+               
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Anasayfa/Index">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title">Anasayfaya dön</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Admin/Menu">
+                <i class="mdi mdi-home menu-icon"></i>
+                <span class="menu-title"> Menüye Dön </span>
+            </a>
+        </li>
+
+ 
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Anasayfa/Signout">
+                <span class="menu-title">Çıkış yap </span>
+            </a>
+        </li>
+
+
+       
+    </ul>
+</nav> 

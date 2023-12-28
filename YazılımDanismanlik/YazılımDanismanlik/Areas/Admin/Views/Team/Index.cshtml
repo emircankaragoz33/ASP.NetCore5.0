@@ -1,0 +1,69 @@
+﻿@model List<WebUser>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 style="text-align:center" class="mb-0">Eğitmen işlemleri</h3>
+</div>
+
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="name">Yetki</th>
+                <th scope="col" class="sort" data-sort="budget">Eğitmen Adı Soyadı</th>
+                <th scope="col">Eğitmenin Uzmanlık Alanı</th>
+                <th scope="col" class="sort" data-sort="completion">Mail Adresi</th>
+                <th scope="col" class="sort" data-sort="completion">Fotoğraf</th>
+                <th scope="col">Kayıt İşlemleri</th>
+                <th scope="col">Alan İşlemleri</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.Id
+                    </th>
+
+                    <th>
+                        Eğitmen
+                    </th>
+                    <th class="budget">
+                        @item.Name @item.Surname
+                    </th>
+
+                    <th class="budget">
+                        @item.UzmanlikAlan
+                    </th>
+
+                    <th class="budget">
+                        @item.Email
+                    </th>
+
+
+
+                    <th class="budget">
+                        <img src="~/memberImage/@item.KucukFotograf">
+                    </th>
+
+
+                    <td> <a href="#" class="btn btn-primary"> Kaydını Sil </a></td>
+                    <td> <a href="#" class="btn btn-primary"> Alanı Değiştir </a></td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+
+
+</div>

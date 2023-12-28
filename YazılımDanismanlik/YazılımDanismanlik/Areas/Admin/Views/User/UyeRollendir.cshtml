@@ -1,0 +1,56 @@
+﻿@using YazilimDanismanlik.Models;
+@model UserRoleViewModel
+@inject List<UserRoleViewModel> list
+
+
+@{
+    ViewData["Title"] = "UyeRollendir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 style="text-align:center" class="mb-0">Yetkiler ve yetkileri düzenleme işlemleri</h3>
+</div>
+
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+               
+                <th scope="col" class="sort" data-sort="budget">Kullanıcı Adı</th>
+                <th scope="col" class="sort" data-sort="budget">Yetkilendir</th>
+              
+
+            </tr>
+        </thead>
+        <tbody class="list">
+
+            @foreach (var item in list)
+            {
+                <tr>
+                   
+                    <th class="budget">
+                        @item.WebUser.UserName
+                    </th>
+
+                    <th class="budget">
+
+                   @Html.DropDownListFor(x=>x.WebRole.Id , (List<SelectListItem>)ViewBag.degerler))
+
+                    </th> 
+
+                
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+
+    <br />
+
+
+    
+
+</div>

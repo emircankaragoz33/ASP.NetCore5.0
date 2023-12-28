@@ -1,0 +1,64 @@
+﻿@model List<Service>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="card-header border-0">
+    <h3 style="text-align:center"  class="mb-0">Hizmetler ve hizmet ekleme işlemleri</h3>
+</div>
+
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">#</th>
+                <th scope="col" class="sort" data-sort="budget">Hizmet Adı</th>
+                <th scope="col">Hizmet Açıklaması</th>
+                <th scope="col" class="sort" data-sort="completion">Hizmet Görsel</th>
+                <th scope="col">Hizmeti kaldır.</th>
+            </tr>
+        </thead>
+        <tbody class="list">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @item.ServiceId
+                    </th>
+                    <th class="budget">
+                        @item.ServiceName
+                    </th>
+
+                    <th class="budget">
+                        @item.ServiceDescription
+                    </th>
+
+                    <th class="budget">
+                        <img width="50px" height="50px" src="/serviceimages/@item.ServiceImage">
+                    </th>
+
+                    <td> <a href="/Admin/Service/DeleteService/@item.ServiceId" class="btn btn-danger"> Hizmeti kaldır. </a></td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+
+    <br />
+
+
+    <a style="margin-left:20px" href="/Admin/Service/AddService/" class="btn btn-primary"> Yeni hizmet ekle! </a>
+
+</div>
+
+
+

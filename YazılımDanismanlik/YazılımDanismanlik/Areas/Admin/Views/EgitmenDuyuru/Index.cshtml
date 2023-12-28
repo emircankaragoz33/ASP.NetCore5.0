@@ -1,0 +1,70 @@
+﻿@using EntityLayer.Concrete
+@model EgitmenContact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<br />
+
+<br />
+
+<br />
+
+<section class="page-section" id="egitmencontact">
+    
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+
+                <form id="contactForm" method="post">
+                    
+                    <div class="form-floating mb-3">
+                        <input readonly value="Sistem" class="form-control" id="name" asp-for="GonderenUye" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                        <label for="name">Gönderen</label>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Ad gereklidir.</div>
+                    </div>
+
+                 <br />
+            
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" asp-for="Message" id="message" type="text" placeholder="Mesajınızı giriniz." style="height: 10rem" data-sb-validations="required"></textarea>
+                        <label for="message">Mesajınız</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Mesaj gereklidir.</div>
+
+                        <br />
+                   <div class="form-floating mb-3">
+                    <input class="form-control" id="name" asp-for="AliciEgitmen" type="text" placeholder="Alıcı eğitmen" data-sb-validations="required" />
+                    <label for="name">Alıcı Eğitmen Adı Soyadı</label>
+                     <div class="invalid-feedback" data-sb-feedback="name:required">Alıcı eğitmen adı gereklidir.</div>
+                    </div> 
+ 
+                    <a href="/Admin/Team"> Eğitmenleri görmek için tıklayın.</a>
+
+
+                    <button type="submit"> Gönder </button>
+
+
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">
+                               İlgili eğitmene duyuru yapıldı.
+                                <br />
+
+                            </div>
+                        </div>
+                      
+
+                       
+                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Gönderildi!</button></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+

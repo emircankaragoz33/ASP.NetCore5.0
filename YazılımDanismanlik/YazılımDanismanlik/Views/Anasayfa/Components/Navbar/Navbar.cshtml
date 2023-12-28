@@ -1,0 +1,63 @@
+﻿@using EntityLayer.Concrete
+@using YazilimDanismanlik.Models;
+
+
+
+@* @inject UserManager<WebUser> UserManager *@
+@inject SignInManager<WebUser> SignInManager
+
+    
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#page-top">Yazılım Danışmanlık </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Hizmetlerimiz</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Ekibimiz</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Kurumsal İletişim</a></li>
+
+
+               
+                
+                @if (SignInManager.IsSignedIn(User))
+                {
+
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li class="nav-item"> <a class="nav-link" href="~/Admin/Menu"> Yetkili Paneli </a></li>
+                    }
+
+
+                    <li class="nav-item"> <a class="nav-link"> @ViewBag.User</a></li>
+
+                    <li class="nav-item"> <a class="nav-link"> <img src="/memberImage/@ViewBag.KullaniciGorsel" style="border-radius : 50%;" height="15%" width="15%" >  </a></li>
+
+                    <li class="nav-item"> <a class="nav-link" href="~/Profile/Index"> Profil </a></li>
+
+                    @if (User.IsInRole("Eğitmen"))
+                    {
+                        <li class="nav-item"> <a class="nav-link" href="~/EgitmenPanel/EgitmenMenu"> Eğitmen Paneli </a></li>
+                    }
+
+
+                 
+
+                    <li class="nav-item"> <a class="nav-link" href="~/Anasayfa/SignOut">Çıkış Yap</a></li>
+
+                }
+
+                else
+                {
+                    <li class="nav-item"><a class="nav-link" href="~/Login">Giriş Yap</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="~/Register">Üye Ol</a></li>
+                }
+
+                
+            </ul>
+        </div>
+    </div>
+</nav> 

@@ -1,0 +1,29 @@
+﻿@using YazilimDanismanlik.Areas.Admin.Models
+@model ServiceViewModel
+
+
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+
+
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+    <br />
+    <label> Yeni Hizmet  tanımla </label>
+    <input type="text" placeholder="Servis Adı" asp-for="Name" class="form-control" />
+    <br />
+    <input type="text" placeholder="Servis Açıklaması Alanı" asp-for="Description" class="form-control">
+    <br />
+    <input type="file" accept="image/*" placeholder="Fotoğraf yükle" asp-for="picture" class="form-control">
+   
+
+
+    <button class="btn btn-primary"> Yeni Hizmet Tanımla </button>
+</form>
+
+
+

@@ -1,0 +1,35 @@
+﻿@model Head
+
+
+@{
+    ViewData["Title"] = "HeadGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="/css/Form.css" rel="stylesheet">
+
+<br />
+
+
+
+<form method="post" class="demo-form1">
+
+   
+    <input value="@Model.HeadId" type="hidden" asp-for="HeadId" >
+
+    <div class="input-wrap">
+        <label class="f-title">Karşılama Başlık</label>
+        <input type="text" asp-for="KarsilamaBaslik" class="input" placeholder="Başlık">
+    </div>
+
+    <div class="input-wrap">
+        <label class="f-title">Hakkımızda Açıklama</label>
+        <input type="text" asp-for="KarsilamaAciklama" class="input" placeholder="Açıklama">
+    </div>
+
+    <button type="submit"> Kaydet ve güncelle </button>
+
+</form>
+
+
+

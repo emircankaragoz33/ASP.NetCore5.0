@@ -1,0 +1,98 @@
+﻿@using YazilimDanismanlik.Models
+@model RegisterViewModel
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/admin/dist/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
+    <style>
+        .login {
+            background: url('loginregisterwallpaper.jpg')
+        }
+    </style>
+    <title>Üye Ol</title>
+</head>
+<body class="h-screen font-sans login bg-cover">
+    <div class="container mx-auto h-full flex flex-1 justify-center items-center">
+        <div class="w-full max-w-lg">
+            <div class="leading-loose">
+                <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" method="post" enctype="multipart/form-data">
+                    <p class="text-gray-800 font-medium">Sisteme Kayıt Ol</p>
+                    <div class="">
+                        <label class="block text-sm text-gray-00" for="cus_name">Kullanıcı Adınız</label>
+                        <span asp-validation-for="UserName"> </span>
+                        <input asp-for="UserName" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"  type="text" required=""  aria-label="Name">
+                    </div>
+
+                    <div class="">
+                        <label class="block text-sm text-gray-00" for="cus_name">Adınız</label>
+                        <span asp-validation-for="Name"> </span> 
+                        <input asp-for="Name"  class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"  type="text" required=""  aria-label="Name">
+                    </div>
+
+                    <div class="">
+                        <label class="block text-sm text-gray-00" for="cus_name">Soyadınız</label>
+                        <span  asp-validation-for="Surname"> </span>
+                        <input asp-for ="Surname"  class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"  type="text" required=""  aria-label="Name">
+                    </div>
+
+                    <div class="">
+                        <label class="block text-sm text-gray-00" for="cus_name">Uzmanlık Alanı</label>
+                        <span asp-validation-for="UzmanlikAlan"> </span>
+                        <input asp-for="UzmanlikAlan" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" type="text" required="" aria-label="Name">
+                    </div>
+
+                    <div class="">
+                        <label class="block text-sm text-gray-00" for="cus_name">Fotoğraf</label>
+                      
+                        <input asp-for="Picture" class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" type="file">
+                    </div>
+
+
+                    <div class="mt-2">
+                        <label class="block text-sm text-gray-600" for="cus_email">Email</label>
+                        <span asp-validation-for="Mail"> </span>
+                        <input asp-for="Mail" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" type="text" required=""  aria-label="Email">
+                    </div>
+
+                    <div class="mt-2">
+                        <label class="block text-sm text-gray-600" for="cus_email">Email</label>
+                        <span asp-validation-for="TelefonNo"> </span>
+                        <input asp-for="TelefonNo" class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" type="number" required="" aria-label="num">
+                    </div>
+
+                    <div class="mt-2">
+                        <label class=" block text-sm text-gray-600" for="cus_email">Şifreniz</label>
+                        <span asp-validation-for="Password"> </span>
+                        <input asp-for="Password" class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"  type="text" required="">
+                    </div>
+                   
+                    <div class="mt-2">
+                        <label class=" block text-sm text-gray-600" for="cus_email">Şifre tekrarı</label>
+                        <span asp-validation-for="ConfirmPassword"> </span>
+                        <input asp-for="ConfirmPassword" class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"  type="text" required="" >
+                    </div>
+
+                  <div class="text-danger" asp-validation-summary="ModelOnly"> </div>
+
+                    <div class="mt-4">
+                        <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit"> Kayıt ol</button>
+                    </div>
+
+               
+
+                    <a class="inline-block right-0 align-baseline font-bold text-sm text-500 hover:text-blue-800" href="~/Login/Index">
+                     Zaten bir hesabınız var mı?
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
